@@ -7,13 +7,13 @@
 define('DB_TYPE', 'mysql');
 
 /** The name of the database */
-define('DB_NAME', 'blog');
+define('DB_NAME', 'DATABASE');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'DATABASE_USER');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'tFg65tGv');
+define('DB_PASSWORD', 'DATABASE_PASSWORD');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
