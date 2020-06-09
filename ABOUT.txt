@@ -1,0 +1,12 @@
+*******************************************
+*** This is Blog System 1.0             ***
+*******************************************
+
+Welcome to "Blog System 1.0, yet another blogsystem" developed by Arjan Groeneveld.
+The site runs on a template engine called Smarty v3.1.34 and has several libraries included, such as Bootstrap, jQuery, TinyMCE v5.3.1, FontAwesome and Metafizzy Infinite Scroll.
+
+Blog System 1.0 allows you to run a site to post your blogs, where visitors can create an account, comment on blogs and up- or downvote a comment. 
+
+Blog System 1.0 runs on PHP and MySQL, which both need to be installed on the target machine in order to run your site. Please make sure that you are running the latest version of PHP and MySQL. Any file that needs write access should be owned or group-owned by the user account used by Blog System 1.0 (which may be different than the server account). For example, you may have a user account that lets you FTP files back and forth to your server, but your server itself may run using a separate user, in a separate usergroup, such as dhapache or www-data. If Blog System 1.0 is running as the FTP account, that account needs to have write access, i.e., be the owner of the files, or belong to a group that has write access.
+
+For more information on how to give files or folders write access on your machine, please look up further information on the internet.

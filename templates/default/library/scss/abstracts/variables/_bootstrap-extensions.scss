@@ -1,0 +1,12 @@
+// Grid columns (with custom gutter map for responsive gutter widths, see: components/grids/_grid.scss)
+
+$grid-gutter-widths: (
+    0: 0,
+    1: ($grid-gutter-width * 0.25),
+    2: ($grid-gutter-width * 0.5),
+    3: ($grid-gutter-width * 0.75),
+    4: $grid-gutter-width,
+    5: ($grid-gutter-width * 1.5),
+    6: ($grid-gutter-width * 2),
+    7: ($grid-gutter-width * 3)
+);

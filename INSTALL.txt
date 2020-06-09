@@ -1,0 +1,48 @@
+                            Blog System 1.0
+
+-------------------------------------------------------------------------------
+0) LICENSE
+-------------------------------------------------------------------------------
+
+(c) Copyright 2020 by "Arjan Groeneveld" <arjan at racingforme dot org>
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+-------------------------------------------------------------------------------
+INSTALLATION STEPS
+-------------------------------------------------------------------------------
+
+
+1) Upload all the files to a location on your target machine.
+
+2) Give write access (chmod) and/or give ownership (chown) to /images/ and its descendants    
+   (avatars, thumbs)
+
+3) Create a database in MySQL and import the SQL-file in /install/database_blog.sql
+
+4) In MySQL, go to the newly created database. Look up 'site_options' and update the 'site_link' field. All other blog settings can be edited from the admin-panel in Blog System 1.0
+
+5) Open /include/config.php to update the base site settings.
+
+6) A default admin account is included in the SQL file, the login details are as following:
+
+   Login: admin
+   Password: blog-admin
+
+/**************************************************************************/
+
+That's it, you are all good to go!
+
+

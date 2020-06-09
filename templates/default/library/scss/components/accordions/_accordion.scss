@@ -1,0 +1,59 @@
+/**
+ * Accordion
+ *
+ */
+
+.accordion {
+}
+
+// Accordion items
+
+.accordion__item {
+    padding-top: spacer(2);
+    padding-bottom: spacer(2);
+
+    & + & {
+        border-top: $border-width solid rgba($black, 0.1);
+    }
+}
+
+// Accordion titles
+
+.accordion__title {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+// Accordion togglers
+
+.accordion__toggler {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+
+    .icon {
+        flex-shrink: 0;
+        transition: transform $global-duration;
+
+        &:last-child {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    // Hover state
+
+    &:hover {
+        text-decoration: none;
+        color: tint($color-base, 80%);
+    }
+
+    // Expanded state
+
+    &[aria-expanded="true"] {
+        .icon {
+            transform: rotate(180deg);
+        }
+    }
+}

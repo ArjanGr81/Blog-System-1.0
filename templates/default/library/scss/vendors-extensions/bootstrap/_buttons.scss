@@ -1,0 +1,119 @@
+/**
+ * Button
+ *
+ */
+
+.button {
+    text-decoration: none;
+    border-radius: 0;
+    // -webkit-transition: .3s ease-in-out;
+    // -moz-transition: .3s ease-in-out;
+    // -o-transition: .3s ease-in-out;
+    // transition: .3s ease-in-out;
+
+    // Active state
+
+    @at-root {
+        a#{&}:active {
+            box-shadow: none !important;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+        border-radius: 0;
+    }
+}
+
+.button--primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: max-content;
+    border: none;
+    height: 35px;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    color: $secondary;
+    font-size: 0.8rem;
+    background-color: $primary;
+    text-align: center;
+    padding: 0 10px 0 10px;
+    line-height: 1;
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    box-shadow: none;
+
+    &:hover {
+        color: $secondary;
+        background-color: lighten($primary, 30%);
+        text-decoration: none;
+
+        &:after {
+            background-color: $white;
+        }
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.button--search {
+    position: absolute;
+    right: 9px;
+    bottom: -35px;
+    border: none;
+    background-color: transparent;
+
+    @include media-breakpoint-up(lg) {
+        right: 1px;
+        top: 5px;
+        bottom: unset;
+    }
+
+    .fa-search {
+        font-size: 1.3rem;
+        color: $primary;
+        -webkit-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        -o-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &:hover {
+            color: $tertiary;
+        }
+    }
+}
+
+// Button sizes
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .btn#{$infix}-lg {
+            @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+        }
+
+        .btn#{$infix}-sm {
+            @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/**
+ * Card
+ *
+ */
+
+.card {
+    @extend %vertical-rhythm;
+
+    text-align: left;
+}
+
+// Card elements
+
+.card-title {
+    @extend %vertical-rhythm-2;
+
+    font-size: $h3-font-size;
+}
+
+.card-text {
+    @extend %vertical-rhythm-2;
+}
+
+// Card groups
+
+.card-group {
+    @extend %vertical-rhythm;
+}
+
+// Bordered card resets (see: components/cards/_card-bordered.scss)
+
+.card { /* stylelint-disable-line */
+    border: 0;
+}
+
+.card-header {
+    border-bottom: inherit;
+}
+
+.card-footer {
+    border-top: inherit;
+}

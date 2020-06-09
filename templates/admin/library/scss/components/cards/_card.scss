@@ -1,0 +1,106 @@
+// Card
+
+.card {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.card-body {
+    height: 100%;
+    width: 100%;
+    padding: 25px 40px;
+    font-family: $font-family-sans-serif;
+    color: $black;
+    font-size: 1rem;
+    line-height: 1rem;
+    background: $quaternary;
+
+    .card-title {
+        font-family: $font-family-sans-serif;
+        color: $black;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        margin-bottom: 30px;
+    }
+
+    .card-subtitle {
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        margin-bottom: 30px;
+        font-size: 0.8rem;
+
+        a {
+            color: $tertiary;
+        }
+    }
+}
+
+.card-badge {
+    position: absolute;
+    top: spacer(2);
+    left: spacer(2);
+    margin: 0;
+    max-width: calc(100% - #{$spacer});
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Bordered card
+
+.card--bordered {
+    border: $card-border-width solid $card-border-color;
+
+    .card-body,
+    .card-footer {
+        padding: $card-spacer-y;
+    }
+}
+
+// Responsive horizontal cards
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .card#{$infix}-horizontal {
+            flex-direction: row;
+        }
+    }
+}
+
+// Link card
+
+.card--link {
+    transition: transform $global-duration;
+    will-change: transform;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.card__link {
+    display: inherit;
+    flex-direction: inherit;
+    flex: inherit;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}

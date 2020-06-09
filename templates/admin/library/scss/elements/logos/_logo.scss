@@ -1,0 +1,18 @@
+/**
+ * Logo
+ *
+ */
+
+.logo {
+    width: 150px;
+    height: auto;
+    opacity: 0.75;
+
+    @include media-breakpoint-up(lg) {
+        width: 185px;
+    }
+}
+
+.logo__link {
+    display: block;
+}

@@ -1,0 +1,15 @@
+/**
+ * Attachment list
+ *
+ */
+
+.list--attachment {
+    .list__item {
+        display: flex;
+    }
+
+    .list__action {
+        margin-left: auto;
+        text-decoration: none;
+    }
+}

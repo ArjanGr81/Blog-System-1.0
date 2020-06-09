@@ -1,0 +1,493 @@
+/**
+ * Meta navigation
+ *
+ */
+
+.nav--meta, .nav--user {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+
+    .nav--meta__item, .nav--user__item {
+         font-family: $font-family-sans-serif-secondary;
+         font-weight: $font-weight-light;
+         font-size: 0.8rem;
+         color: $tertiary;
+         text-transform: uppercase;
+         margin: 0 10px;
+
+         &:first-child {
+             margin-left: 0;
+         }
+
+         &:last-child {
+             margin-right: 0;
+         }
+
+         a {
+             text-decoration: none;
+             color: $tertiary;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.meta-nav__search {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101vh;
+    background-color: $primary;
+    z-index: 6;
+
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        height: auto;
+    }
+
+    .search__wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 170px 20px;
+
+        @include media-breakpoint-up(lg) {
+            height: 55px;
+            padding: 12px 0;
+        }
+
+        .search__default {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-family-sans-serif-secondary;
+            font-weight: $font-weight-extra-bold;
+            font-size: 0.8rem;
+            color: $secondary;
+            text-transform: uppercase;
+
+            strong {
+                font-weight: $font-weight-bold;
+            }
+
+            .search__bar {
+                position: relative;
+
+                button {
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    border: none;
+                    background-color: transparent;
+                    margin-left: 5px;
+    
+                    .fa-search {
+                        font-size: 1.3rem;
+                        color: $secondary;
+                        -webkit-transition: all 200ms ease-in-out;
+                        -moz-transition: all 200ms ease-in-out;
+                        -o-transition: all 200ms ease-in-out;
+                        transition: all 200ms ease-in-out;
+    
+                        &:focus {
+                            outline: none;
+                        }
+    
+                        &:hover {
+                            color: $tertiary;
+                        }
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                top: 70px;
+                width: 100%;
+                padding: 0 23px;
+                font-family: $font-family-sans-serif-secondary;
+                font-weight: $font-weight-light;
+                font-size: 0.75rem;
+                color: $secondary;
+                text-transform: uppercase;
+                text-align: center;
+
+                span {
+                    top: 62px;
+                    left: 0;
+                }
+            }
+
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.8rem;
+                margin-bottom: 0;
+                margin-right: 15px;
+                text-transform: none;
+                border-radius: 25px;
+                border: 2px solid $secondary;
+                width: 25px;
+                height: 25px;
+                -webkit-transition: all 200ms ease-in-out;
+                -moz-transition: all 200ms ease-in-out;
+                -o-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
+
+                &:hover {
+                    color: $tertiary;
+                    border: 2px solid $tertiary;
+                }
+            }
+
+            input:not([type="button"]) {
+                font-family: $font-family-sans-serif-secondary;
+                font-weight: $font-weight-normal;
+                font-size: 0.9rem;
+                border: none;
+                background-color: $quinary;
+                color: $secondary;
+                border-radius: 3px;
+                padding: 5px 10px;
+                width: 325px;
+                letter-spacing: 0.5px;
+
+                @include media-breakpoint-up(lg) {
+                    width: 450px;
+                }
+
+                &:focus, &:active {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    opacity: 0.7;
+                    color: $primary;
+                    font-size: 0.85rem;
+                    font-weight: $font-weight-normal;
+                }
+            }
+
+            .fa-times {
+                position: absolute;
+                top: 15px;
+                right: 25px;
+                font-size: 1.5rem;
+                color: darken($secondary, 30%);
+                margin-left: 10px;
+                cursor: pointer;
+                -webkit-transition: all 200ms ease-in-out;
+                -moz-transition: all 200ms ease-in-out;
+                -o-transition: all 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 1rem;
+                }
+
+                &:after {
+                    position: absolute;
+                    top: 7px;
+                    right: 24px;
+                    font-family: $font-family-sans-serif-secondary;
+                    font-weight: $font-weight-normal;
+                    font-size: 0.8rem;
+                    content: 'Close';
+                    text-transform: uppercase;
+
+                    @include media-breakpoint-up(lg) {
+                        font-size: 0.6rem;
+                        top: 5px;
+                        right: 18px;
+                    }
+                }
+
+                &:hover {
+                    color: $tertiary;
+                }
+            }
+
+            .search__options {
+                position: absolute;
+                top: 225px;
+                font-size: 0.8rem;
+                cursor: pointer;
+
+                @include media-breakpoint-up(lg) {
+                    position: relative;
+                    top: unset;
+                    margin-left: 20px;
+                }
+
+                &:hover, &.active {
+                    color: $tertiary;
+                }
+            }
+        }
+
+        .search__advanced {
+            position: absolute;
+            top: 255px;
+            display: none;
+            width: 100%;
+            height: 98px;
+            background-color: $primary;
+            z-index: 1;
+
+            @include media-breakpoint-up(lg) {
+                top: 55px;
+            }
+
+            .advanced__wrapper {
+                display: flex;
+                justify-content: flex-start;
+                height: auto;
+
+                @include media-breakpoint-up(lg) {
+                    justify-content: center;
+                    height: unset;
+                    margin-top: 14px;
+                }
+
+                > ul {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+                    padding: 10px 20px;
+                    width: 100%;
+
+                    @include media-breakpoint-up(lg) {
+                        flex-direction: row;
+                        justify-content: space-evenly;
+                        padding: 0;
+                        width: 50%;
+                    }
+
+                    > li {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        width: 100%;
+                        margin: 8px 0;
+                        line-height: 2.6;
+
+                        @include media-breakpoint-up(lg) {
+                            width: unset;
+                            margin: unset;
+                            line-height: 1.7;
+                        }
+
+                        .search__field {
+                            display: flex;
+                            align-items: center;
+                            width: 114px;
+                            justify-content: flex-end;
+
+                            @include media-breakpoint-up(lg) {
+                                width: unset;
+                                justify-content: unset;
+                            }
+
+                            label {
+                                font-family: $font-family-sans-serif-secondary;
+                                font-weight: $font-weight-semi-bold;
+                                font-size: 0.75rem;
+                                color: $secondary;
+                                text-transform: uppercase;
+                                letter-spacing: 0.03rem;
+                                margin-bottom: 0;
+                            }
+
+                            .checkbox {
+                                display: inline-block;
+                                position: relative;
+                                top: -1px;
+                                left: 5px;
+                                border: 2px solid $tertiary;
+                                border-radius: 3px;
+                                width: 18px;
+                                height: 18px;
+                                background: $quinary;
+                                -webkit-appearance: none;
+                                -moz-appearance: none;
+                                appearance: none;
+                    
+                                &:focus {
+                                    outline: none;
+                                }
+                    
+                                &:checked {
+                                    background-color: $quinary;
+                                    border: 2px solid $tertiary;
+                                    border-radius: 3px;
+                                    color: $white;
+                    
+                                    &:after {
+                                        content: '■';
+                                        font-size: 0.95rem;
+                                        position: absolute;
+                                        top: -13px;
+                                        left: 0px;
+                                        color: $tertiary;
+                    
+                                        @include media-breakpoint-up(md) {
+                                            font-size: 1.2rem;
+                                        }
+                    
+                                        @include media-breakpoint-up(lg) {
+                                            font-size: 1.21rem;
+                                            top: -12px;
+                                            left: 0px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .search__info {
+                            font-family: $font-family-sans-serif-secondary;
+                            font-weight: $font-weight-normal;
+                            font-size: 0.7rem;
+                            color: $secondary;
+                            margin-left: 15px;
+
+                            @include media-breakpoint-up(lg) {
+                                margin-left: unset;
+                            }
+                        }
+
+                        .advanced__categories {
+                            display: none;
+                            position: relative;
+                            right: -16px;
+                            margin-left: 0;
+
+                            @include media-breakpoint-up(lg) {
+                                margin-left: unset;
+                                position: absolute;
+                                top: 35px;
+                                right: -4px;
+                            }
+
+                            .select-arrow {
+                                width: 274px;
+            
+                                @include media-breakpoint-up(lg) {
+                                    width: 385px;
+                                }
+                    
+                                .select-css {
+                                    display: block;
+                                    font-family: $font-family-sans-serif-secondary;
+                                    font-weight: $font-weight-normal;
+                                    font-size: 0.8rem;
+                                    border: none;
+                                    background-color: $quinary;
+                                    color: $secondary;
+                                    border-radius: 3px;
+                                    padding: 0 10px 0 10px;
+                                    width: 198px;
+                                    letter-spacing: 0.5px;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+                                    line-height: 2.4;
+                                    cursor: pointer;
+
+                                    .select-css__parent {
+                                        font-weight: $font-weight-bold;
+                                        color: $tertiary;
+                                        background-color: darken($quinary, 30%);
+                                    }
+
+                                    .select-css__child {
+                                        font-size: 0.7rem;
+                                        background-color: darken($quinary, 30%);
+                                    }
+            
+                                    @include media-breakpoint-up(lg) {
+                                        width: 270px;
+                                    }
+                    
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                                
+                                &:after {
+                                    content: '\25bc';
+                                    position: absolute;
+                                    top: -8px;
+                                    right: 6px;
+                                    cursor: pointer;
+                                    pointer-events: none;
+                                    color: $tertiary;
+                                    width: 15px;
+                                    height: 9px;
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+
+                        .advanced__dates {
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            right: 7px;
+                            list-style: none;
+                            padding: 0;
+                            flex-direction: column;
+
+                            @include media-breakpoint-up(lg) {
+                                flex-direction: row;
+                                top: 35px;
+                                left: 0;
+                                right: unset;
+                            }
+
+                            input {
+                                font-family: $font-family-sans-serif-secondary;
+                                font-weight: $font-weight-normal;
+                                font-size: 0.8rem;
+                                border: none;
+                                background-color: $quinary;
+                                color: $secondary;
+                                border-radius: 3px;
+                                padding: 0 10px;
+                                width: 198px;
+                                letter-spacing: 0.5px;
+
+                                @include media-breakpoint-up(lg) {
+                                    width: 132px;
+                                    padding: 5px 10px;
+                                }
+
+                                &:first-child {
+                                    @include media-breakpoint-up(lg) {
+                                        margin-right: 10px;
+                                    }
+                                }
+                
+                                &:focus {
+                                    outline: none;
+                                }
+                
+                                &::placeholder {
+                                    opacity: 0.7;
+                                    color: $primary;
+                                    font-size: 0.85rem;
+                                    font-weight: $font-weight-normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
