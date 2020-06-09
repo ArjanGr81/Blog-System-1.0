@@ -1,0 +1,248 @@
+/**
+ * Primary nav
+ *
+ */
+
+.nav--primary {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 75px;
+
+    &.is-mobile {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 82%;
+
+        .nav--primary__item {
+            margin: unset;
+            margin-bottom: 15px;
+            text-align: center;
+
+            i {
+                position: absolute;
+                right: unset;
+                margin-left: 10px;
+            }
+        }
+
+        .sub-menu {
+            position: relative;
+            flex-direction: column;
+            top: 15px;
+            margin-bottom: 15px;
+
+            .list-item {
+                margin: unset;
+                margin-bottom: 5px;
+            }
+        }
+
+        .nav--primary__donations {
+            position: absolute;
+            bottom: 80px;
+            margin-left: 15px;
+        }
+    }
+
+    .nav--primary__item {
+        position: relative;
+        margin: 0 20px;
+
+        label {
+            font-family: $font-family-sans-serif-secondary;
+            font-weight: $font-weight-bold;
+            font-size: 1.1rem;
+            color: rgba($primary, 0.95);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            cursor: pointer;
+            margin-bottom: 0;
+
+            &:after {
+                    display: block;
+                    content: "";
+                    width: 30%;
+                    height: 2px;
+                    background-color: $tertiary;
+                    position: relative;
+                    -webkit-transition: all 0.15s ease-in-out;
+                    -moz-transition: all 0.15s ease-in-out;
+                    -o-transition: all 0.15s ease-in-out;
+                    -ms-transition: all 0.15s ease-in-out;
+                    transition: all 0.15s ease-in-out;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    &:after {
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: calc(100% - 20px);
+                        opacity: 1;
+                    }
+                }
+            
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: $tertiary;
+
+           &:hover {
+               color: $secondary;
+           }
+        }
+
+        i {
+           position: absolute;
+           top: 3px;
+           right: -16px;
+           opacity: 0;
+           font-size: 1.3rem;
+           -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+
+        &.active {
+            i {
+                opacity: 1;
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .sub-menu {
+        display: none;
+        position: absolute;
+        top: 33px;
+        left: 2px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+
+        .list-item {
+            position: relative;
+            margin: 0 10px;
+            white-space: nowrap;
+
+            &:after {
+                display: block;
+                content: "";
+                width: 30%;
+                height: 2px;
+                background-color: #08ada7;
+                position: relative;
+                -webkit-transition: all 0.15s ease-in-out;
+                -moz-transition: all 0.15s ease-in-out;
+                -o-transition: all 0.15s ease-in-out;
+                -ms-transition: all 0.15s ease-in-out;
+                transition: all 0.15s ease-in-out;
+                opacity: 0;
+            }
+
+            &:hover {
+                &:after {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: calc(100% - 20px);
+                    opacity: 1;
+                }
+            }
+
+            a {
+                font-family: $font-family-sans-serif-secondary;
+                font-weight: $font-weight-bold;
+                font-size: 0.8rem;
+                color: rgba($primary, 0.95);
+                text-transform: uppercase;
+                letter-spacing: 0.03rem;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+    
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .nav--primary__donations {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-sans-serif-secondary;
+        font-size: 0.6rem;
+        font-weight: $font-weight-bold;
+        color: $primary;
+        text-transform: uppercase;
+        border-top: 2px solid $quinary;
+        border-right: 2px solid $quinary;
+        border-bottom: 2px solid $quinary;
+        width: 120px;
+        height: 28px;
+        margin-left: 55px;
+        padding: 2px 0;
+        transform: skew(-20deg);
+
+        &:before {
+            position: absolute;
+            content: '';
+            left: -30px;
+            top: -8px;
+            height: 40px;
+            width: 40px;
+            border-radius: 25px;
+            border: 2px solid $quinary;
+            background-color: $tertiary;
+            background-image: url('../img/paypal-rfm.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 23px;
+            z-index: 1;
+            transform: skew(20deg);
+        }
+
+        span {
+            transform: skew(20deg);
+
+            &:first-child {
+                position: absolute;
+                z-index: 1;
+                text-align: center;
+                letter-spacing: 0.03rem;
+                padding-left: 3px;
+            }
+
+            &:last-child {
+                position: absolute;
+                z-index: 0;
+                height: 24px;
+                background-color: $tertiary;
+                left: -3px;
+                transform: skew(0deg);
+            }
+        }
+    }
+}

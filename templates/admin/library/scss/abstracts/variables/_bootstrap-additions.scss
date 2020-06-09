@@ -1,0 +1,36 @@
+$global-duration: 0.2s;
+
+// Colors
+
+$color-base: #212c57;
+$color-lead: rgba($color-base, 0.6);
+
+$color-facebook: #3b5998;
+$color-flickr: #0063dc;
+$color-foursquare: #f94877;
+$color-google-plus: #dd4b39;
+$color-instagram: #e34b88;
+$color-linkedin: #0077b5;
+$color-pinterest: #bd081c;
+$color-snapchat: #fffc00;
+$color-tumblr: #35465c;
+$color-twitter: #1da1f2;
+$color-vimeo: #162221;
+$color-whatsapp: #075e54;
+$color-youtube: #f00;
+
+$brand-colors: (
+    "facebook": $color-facebook,
+    "flickr": $color-flickr,
+    "foursquare": $color-foursquare,
+    "google-plus": $color-google-plus,
+    "instagram": $color-instagram,
+    "linkedin": $color-linkedin,
+    "pinterest": $color-pinterest,
+    "snapchat": $color-snapchat,
+    "tumblr": $color-tumblr,
+    "twitter": $color-twitter,
+    "vimeo": $color-vimeo,
+    "whatsapp": $color-whatsapp,
+    "youtube": $color-youtube
+);

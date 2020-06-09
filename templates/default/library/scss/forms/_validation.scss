@@ -1,0 +1,55 @@
+/**
+ * Validation
+ *
+ */
+
+// Error state
+
+.is-error {
+
+    // Styled form controls
+
+    &.form-control,
+    &.custom-select {
+        border-color: $danger;
+
+        &:focus {
+            box-shadow: 0 0 0 $input-focus-width rgba($danger, 0.25);
+        }
+    }
+
+    // Adjacent labels
+
+    [type="checkbox"],
+    [type="radio"] {
+        + label {
+            color: $danger;
+        }
+    }
+
+    // Custom controls
+
+    .custom-control-label {
+        &:before {
+            border-color: $danger;
+        }
+    }
+}
+
+// Success state
+
+.is-success {
+}
+
+// Parsley errors list
+
+.parsley-errors-list {
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+    color: $danger;
+
+    &:empty {
+        display: none;
+    }
+}

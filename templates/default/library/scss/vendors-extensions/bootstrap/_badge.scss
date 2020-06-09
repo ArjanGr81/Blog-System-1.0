@@ -1,0 +1,15 @@
+/**
+ * Badge
+ *
+ */
+
+.badge {
+    line-height: $line-height-base;
+    transition: $btn-transition;
+}
+
+// Anchor badges
+
+a.badge {
+    text-decoration: none;
+}

@@ -1,0 +1,75 @@
+/**
+* Base
+*
+*/
+
+html {
+    font-size: 1rem;
+    overflow-x: hidden;
+
+    // Medium and up
+
+    @include media-breakpoint-up(md) {
+        font-size: 1.0625rem;
+    }
+
+    // Large and up
+
+    @include media-breakpoint-up(lg) {
+        font-size: 1.125rem;
+    }
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.is-mobile {
+        position: fixed;
+    }
+}
+
+.body--front {
+    background-color: darken($primary, 12%);
+}
+
+a {
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+[href^="tel:"],
+[href^="tel:"]:hover {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+dl,
+ol,
+ul,
+form,
+table {
+    @extend %vertical-rhythm;
+}
+
+label[for] {
+    cursor: pointer;
+}
+
+p {
+    &:empty {
+        display: none;
+    }
+}
+
+table {
+    width: 100%;
+    empty-cells: show;
+}

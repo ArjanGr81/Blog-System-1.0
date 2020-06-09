@@ -1,0 +1,16 @@
+/**
+ * Type
+ *
+ */
+
+.lead {
+    color: $color-lead;
+}
+
+// Blockquotes
+
+.blockquote-footer {
+    &:before {
+        content: "";
+    }
+}

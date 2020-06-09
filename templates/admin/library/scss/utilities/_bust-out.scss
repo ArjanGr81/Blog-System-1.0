@@ -1,0 +1,40 @@
+/**
+ * Bust out
+ *
+ */
+
+html {
+    // overflow-x: hidden;
+    
+}
+
+.bust-out {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+}
+
+// Responsive bust out
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        // Max width bust out
+
+        .bust-out#{$infix}-max-width {
+            margin-right: calc(50% - 50vw + 20px);
+            margin-left: calc(50% - 50vw + 20px);
+            max-width: 1180px;
+            transform: translateX(calc(50vw - 50% - 20px));
+        }
+
+        // Spacer bust out
+
+        @each $size, $length in $spacers {
+            .bust-out-spacer#{$infix}-#{$size} {
+                margin-right: -$length;
+                margin-left: -$length;
+            }
+        }
+    }
+}

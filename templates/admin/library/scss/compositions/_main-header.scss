@@ -1,0 +1,81 @@
+/**
+ * Main header
+ *
+ */
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+
+  &.scrolled {
+    .main-header__nav {
+      position: fixed;
+      width: 100%;
+      z-index: 5;
+      top: 0;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+    }
+
+    // .meta-nav {
+    //   opacity: 0;
+    // }
+  }
+
+  &.is-mobile {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: 0;
+  }
+}
+
+.main-header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: $quinary;
+
+    .admin-icons {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: $secondary;
+
+        &:hover {
+          color: darken($secondary, 10%);
+        }
+
+        i {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    span {
+      font-family: $font-family-sans-serif-secondary;
+      font-size: 0.9rem;
+      font-weight: $font-weight-normal;
+      color: $secondary;
+
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+      
+
+    .main-header__logo {
+      display: flex;
+      width: 50%;
+
+      @include media-breakpoint-up(lg) {
+        width: 25%;
+      }
+    }
+}

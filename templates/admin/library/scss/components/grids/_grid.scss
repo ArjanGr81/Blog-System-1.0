@@ -1,0 +1,72 @@
+/**
+ * Grid
+ *
+ */
+
+@if $enable-grid-classes {
+    // Row
+
+    .row {
+        // !!! These are not the styles you're looking for.
+        //     Add or override properties for existing Bootstrap elements in vendors-extensions/bootstrap/_[THIS_FILENAME].scss
+
+        // Gutters (including Y-gutters)
+
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            @include media-breakpoint-up($breakpoint) {
+                $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+                &.gutters#{$infix} {
+                    margin-top: -$grid-gutter-width;
+                    margin-bottom: $grid-gutter-width;
+
+                    > .col,
+                    > [class*="col-"] {
+                        padding-top: $grid-gutter-width;
+                    }
+                }
+
+                // Gutter sizes
+
+                @each $size, $length in $grid-gutter-widths {
+                    // For rem gutters, replace $grid-gutter-widths with $spacers
+
+                    &.gutters#{$infix}-#{$size} {
+                        margin-top: -$length;
+                        margin-right: -($length / 2);
+                        // margin-bottom: $length;
+                        margin-left: -($length / 2);
+
+                        > .col,
+                        > [class*="col-"] {
+                            padding-top: $length;
+                            padding-right: ($length / 2);
+                            padding-left: ($length / 2);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Reset margins
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Equalized rows (including cards)
+
+    .row--equalized {
+        // Universal selector to keep specificity low (.class > * = 0010)
+
+        > * {
+            display: flex;
+            flex-direction: column;
+
+            > * {
+                flex: 1 1 auto;
+            }
+        }
+    }
+}

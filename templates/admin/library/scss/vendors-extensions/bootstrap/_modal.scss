@@ -1,0 +1,18 @@
+/**
+ * Modal
+ *
+ */
+
+.modal {
+    // Open state
+
+    .modal-open & {
+        -webkit-overflow-scrolling: touch; // Remove this when you have scroll issues on iOS, see: https://github.com/twbs/bootstrap/issues/17695
+    }
+}
+
+// Modal dialog
+
+.modal-dialog {
+    margin-bottom: $modal-dialog-margin !important; // Overrule vertical rhythm margin reset
+}

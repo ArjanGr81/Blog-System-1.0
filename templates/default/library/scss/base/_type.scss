@@ -1,0 +1,18 @@
+/**
+ * Type
+ *
+ */
+
+.address {
+    @extend %vertical-rhythm;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.link-discrete {
+    @extend .text-muted;
+
+    text-decoration: none;
+}

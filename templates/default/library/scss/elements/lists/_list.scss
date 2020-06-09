@@ -1,0 +1,16 @@
+/**
+ * List
+ *
+ */
+
+.list {
+    @extend .list-unstyled;
+}
+
+// Spaced list
+
+.list--spaced {
+    .list__item {
+        @extend %vertical-rhythm-1;
+    }
+}
