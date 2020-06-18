@@ -25,7 +25,7 @@ define('DB_HOST', 'localhost');
  */ 
 
 /** Mail hostname */
-define('MAIL_HOST', 'mail.racingfor.me');
+define('MAIL_HOST', 'mail.your-domain.com');
 
 /** Mail port */
 define('MAIL_PORT', 587);
